@@ -286,6 +286,7 @@ gtag('config', 'G-3H9MYB3TMQ');
         }
 
         // --- Helper for WhatsApp (Used in Details Page) ---
+
         function openWhatsApp(phone, name) {
             const message = encodeURIComponent(`Hi ${name}, I saw your profile on VivaahPortal and I'm interested in your services for my wedding.`);
             window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
@@ -417,7 +418,17 @@ gtag('config', 'G-3H9MYB3TMQ');
                                     <span class="text-gray-400 font-bold block mb-1">Package Price</span>
                                     <h3 class="text-4xl font-black text-gray-900">₹${vendor.price.toLocaleString()}</h3>
                                 </div>
-                                <button onclick="openWhatsApp('${vendor.phone}', '${vendor.name}')" 
+                                <button onclick="openWhatsApp('${vendor.phone}', '${vendor.name}')"   <a href="https://wa.me/919876543210?text=Hi%20I%20found%20you%20on%20VivaahPortal"
+   target="_blank"
+   onclick="gtag('event', 'whatsapp_click', {
+     vendor_id: 'VP101',
+     vendor_name: 'Royal Wedding Studio',
+     category: 'Photographer',
+     city: 'Nagpur'
+   })"
+   class="bg-green-500 text-white px-4 py-2 rounded">
+   WhatsApp Vendor
+</a>
                                         class="w-full py-5 bg-[#25D366] text-white font-black rounded-2xl text-lg shadow-xl shadow-green-100 hover:bg-[#20bd5c] transition mb-4 flex items-center justify-center space-x-3">
                                     <i data-lucide="message-circle" class="w-6 h-6"></i>
                                     <span>Contact on WhatsApp</span>
